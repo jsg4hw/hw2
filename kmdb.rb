@@ -327,6 +327,7 @@ puts ""
 # TODO!
 
 roles = Role.all
+# puts roles.inspect
 for role in roles
     movie = Movie.find_by({"id" => role["movie_id"]})
     actor = Actor.find_by({"id" => role["actor_id"]})
