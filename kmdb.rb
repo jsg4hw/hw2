@@ -164,6 +164,8 @@ new_actor = Actor.new
 new_actor["name"] = "Anne Hathaway"
 new_actor.save
 
+#Batman Begins Roles
+
 new_role = Role.new
 new_role["movie_id"] = BB["id"]
 new_role["actor_id"] = Actor.where({"name" => "Christian Bale"})["id"]
@@ -194,6 +196,8 @@ new_role["actor_id"] = Actor.where({"name" => "Liam Neeson"})["id"]
 new_role["character_name"] = "Ra's Al Guhl"
 new_role.save
 
+#Dark Knight Roles
+
 new_role = Role.new
 new_role["movie_id"] = DK["id"]
 new_role["actor_id"] = Actor.where({"name" => "Christian Bale"})["id"]
@@ -223,6 +227,39 @@ new_role["movie_id"] = DK["id"]
 new_role["actor_id"] = Actor.where({"name" => "Aaron Eckhart"})["id"]
 new_role["character_name"] = "Harvey Dent"
 new_role.save
+
+# Dark Knight Rises Roles
+
+new_role = Role.new
+new_role["movie_id"] = DKR["id"]
+new_role["actor_id"] = Actor.where({"name" => "Christian Bale"})["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = DKR["id"]
+new_role["actor_id"] = Actor.where({"name" => "Tom Hardy"})["id"]
+new_role["character_name"] = "Bane"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = DKR["id"]
+new_role["actor_id"] = Actor.where({"name" => "Gary Oldman"})["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = DKR["id"]
+new_role["actor_id"] = Actor.where({"name" => "Joseph Gordon-Levitt"})["id"]
+new_role["character_name"] = "John Blake"
+new_role.save
+
+new_role = Role.new
+new_role["movie_id"] = DKR["id"]
+new_role["actor_id"] = Actor.where({"name" => "Anne Hathaway"})["id"]
+new_role["character_name"] = "Selina Kyle"
+new_role.save
+
 
 # Prints a header for the movies output
 puts "Movies"
