@@ -89,15 +89,15 @@ new_studio.save
 
 # puts Studio.all.count
 wb_studio = Studio.find_by({"name" => "Warner Bros."})
-wb_studio.save
+
 puts wb_studio.inspect
 
 new_movie = Movie.new
 new_movie["title"] = "Batman Begins"
-new_movie["year_released"] = "2005"
+new_movie["year_released"] = 2005
 new_movie["rated"] = "PG-13"
 new_movie["studio_id"] = wb_studio["id"]
-# new_movie["studio_id"] = Studio.where({"name" => "Warner Bros."})["id"]
+# new_movie["studio_id"] = Studio.find_by({"name" => "Warner Bros."})["id"]
 new_movie.save
 
 puts Movie.all.count
@@ -119,202 +119,216 @@ new_movie.save
 puts Movie.all.count
 
 bb = Movie.find_by({"title" => "Batman Begins"})
-bb.save
+# bb.save
 
 dk = Movie.find_by({"title" => "The Dark Knight"})
-dk.save
+# dk.save
 
 dkr = Movie.find_by({"title" => "The Dark Knight Rises"})
-dkr.save
+# dkr.save
 
-# new_actor = Actor.new
-# new_actor["name"] = "Christian Bale"
-# new_actor.save
+new_actor = Actor.new
+new_actor["name"] = "Christian Bale"
+new_actor.save
+bale = Actor.find_by({"name" => "Christian Bale"})
 
-# new_actor = Actor.new
-# new_actor["name"] = "Michael Caine"
-# new_actor.save
 
-# new_actor = Actor.new
-# new_actor["name"] = "Liam Neeson"
-# new_actor.save
+new_actor = Actor.new
+new_actor["name"] = "Michael Caine"
+new_actor.save
+caine = Actor.find_by({"name" => "Michael Caine"})
 
-# new_actor = Actor.new
-# new_actor["name"] = "Katie Holmes"
-# new_actor.save
 
-# new_actor = Actor.new
-# new_actor["name"] = "Gary Oldman"
-# new_actor.save
+new_actor = Actor.new
+new_actor["name"] = "Liam Neeson"
+new_actor.save
+neeson = Actor.find_by({"name" => "Liam Neeson"})
 
-# new_actor = Actor.new
-# new_actor["name"] = "Heath Ledger"
-# new_actor.save
 
-# new_actor = Actor.new
-# new_actor["name"] = "Aaron Eckhart"
-# new_actor.save
+new_actor = Actor.new
+new_actor["name"] = "Katie Holmes"
+new_actor.save
+holmes = Actor.find_by({"name" => "Katie Holmes"})
 
-# new_actor = Actor.new
-# new_actor["name"] = "Joseph Gordon-Levitt"
-# new_actor.save
 
-# new_actor = Actor.new
-# new_actor["name"] = "Tom Hardy"
-# new_actor.save
+new_actor = Actor.new
+new_actor["name"] = "Gary Oldman"
+new_actor.save
+oldman = Actor.find_by({"name" => "Gary Oldman"})
 
-# new_actor = Actor.new
-# new_actor["name"] = "Maggie Gyllenhaal"
-# new_actor.save
 
-# new_actor = Actor.new
-# new_actor["name"] = "Anne Hathaway"
-# new_actor.save
+new_actor = Actor.new
+new_actor["name"] = "Heath Ledger"
+new_actor.save
+ledger = Actor.find_by({"name" => "Heath Ledger"})
+
+
+new_actor = Actor.new
+new_actor["name"] = "Aaron Eckhart"
+new_actor.save
+eckhart = Actor.find_by({"name" => "Aaron Eckhart"})
+
+
+new_actor = Actor.new
+new_actor["name"] = "Joseph Gordon-Levitt"
+new_actor.save
+jgl = Actor.find_by({"name" => "Joseph Gordon-Levitt"})
+
+
+new_actor = Actor.new
+new_actor["name"] = "Tom Hardy"
+new_actor.save
+hardy = Actor.find_by({"name" => "Tom Hardy"})
+
+
+new_actor = Actor.new
+new_actor["name"] = "Maggie Gyllenhaal"
+new_actor.save
+mags = Actor.find_by({"name" => "Maggie Gyllenhaal"})
+
+
+new_actor = Actor.new
+new_actor["name"] = "Anne Hathaway"
+new_actor.save
+anne = Actor.find_by({"name" => "Anne Hathaway"})
+
+
+puts Actor.all.count 
 
 # #Batman Begins Roles
 
-# new_role = Role.new
-# new_role["movie_id"] = bb["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Christian Bale"})["id"]
-# new_role["character_name"] = "Bruce Wayne"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = bb["id"]
+# new_role["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
+new_role["actor_id"] = bale["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = bb["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Michael Caine"})["id"]
-# new_role["character_name"] = "Alfred Pennyworth"
-# new_role.save
+puts Role.all.count
 
-# new_role = Role.new
-# new_role["movie_id"] = bb["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Gary Oldman"})["id"]
-# new_role["character_name"] = "Commissioner Gordon"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = bb["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
+new_role["character_name"] = "Alfred Pennyworth"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = bb["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Katie Holmes"})["id"]
-# new_role["character_name"] = "Rachel Dawes"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = bb["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = bb["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Liam Neeson"})["id"]
-# new_role["character_name"] = "Ra's Al Guhl"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = bb["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Katie Holmes"})["id"]
+new_role["character_name"] = "Rachel Dawes"
+new_role.save
 
-# #Dark Knight Roles
+new_role = Role.new
+new_role["movie_id"] = bb["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Liam Neeson"})["id"]
+new_role["character_name"] = "Ra's Al Guhl"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dk["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Christian Bale"})["id"]
-# new_role["character_name"] = "Bruce Wayne"
-# new_role.save
+#Dark Knight Roles
 
-# new_role = Role.new
-# new_role["movie_id"] = dk["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Michael Caine"})["id"]
-# new_role["character_name"] = "Alfred Pennyworth"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dk["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dk["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Gary Oldman"})["id"]
-# new_role["character_name"] = "Commissioner Gordon"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dk["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
+new_role["character_name"] = "Alfred Pennyworth"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dk["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Heath Ledger"})["id"]
-# new_role["character_name"] = "Joker"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dk["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dk["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Aaron Eckhart"})["id"]
-# new_role["character_name"] = "Harvey Dent"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dk["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Heath Ledger"})["id"]
+new_role["character_name"] = "Joker"
+new_role.save
 
-# # Dark Knight Rises Roles
+new_role = Role.new
+new_role["movie_id"] = dk["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Aaron Eckhart"})["id"]
+new_role["character_name"] = "Harvey Dent"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dkr["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Christian Bale"})["id"]
-# new_role["character_name"] = "Bruce Wayne"
-# new_role.save
+# Dark Knight Rises Roles
 
-# new_role = Role.new
-# new_role["movie_id"] = dkr["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Tom Hardy"})["id"]
-# new_role["character_name"] = "Bane"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dkr["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
+new_role["character_name"] = "Bruce Wayne"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dkr["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Gary Oldman"})["id"]
-# new_role["character_name"] = "Commissioner Gordon"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dkr["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Tom Hardy"})["id"]
+new_role["character_name"] = "Bane"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dkr["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Joseph Gordon-Levitt"})["id"]
-# new_role["character_name"] = "John Blake"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dkr["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
+new_role["character_name"] = "Commissioner Gordon"
+new_role.save
 
-# new_role = Role.new
-# new_role["movie_id"] = dkr["id"]
-# new_role["actor_id"] = Actor.where({"name" => "Anne Hathaway"})["id"]
-# new_role["character_name"] = "Selina Kyle"
-# new_role.save
+new_role = Role.new
+new_role["movie_id"] = dkr["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Joseph Gordon-Levitt"})["id"]
+new_role["character_name"] = "John Blake"
+new_role.save
 
+new_role = Role.new
+new_role["movie_id"] = dkr["id"]
+new_role["actor_id"] = Actor.find_by({"name" => "Anne Hathaway"})["id"]
+new_role["character_name"] = "Selina Kyle"
+new_role.save
 
-# # Prints a header for the movies output
-# puts "Movies"
-# puts "======"
-# puts ""
+puts Role.all.count 
 
-# # Query the movies data and loop through the results to display the movies output.
-# # TODO!
-# movies = Movie.all
+# Prints a header for the movies output
+puts "Movies"
+puts "======"
+puts ""
+
+# Query the movies data and loop through the results to display the movies output.
+# TODO!
+movies = Movie.all
 # puts movies.inspect
 
-# for movie in movies
-#     title = movie["title"]
-#     year = movie["year_released"]
-#     rating = movie["rating"]
-#     studio = movie["studio_id"]
-#     puts "#{title}  #{year}    #{rating}    #{studio}"
-# end
 
-# # Batman Begins          2005           PG-13  Warner Bros.
-# # The Dark Knight        2008           PG-13  Warner Bros.
-# # The Dark Knight Rises  2012           PG-13  Warner Bros.
+for movie in movies
+    studio = Studio.find_by({"id" => movie["studio_id"]})
+    puts "#{movie["title"]} #{movie["year_released"]}   #{movie["rated"]}   #{studio["name"]}"
+end 
+
+# Batman Begins          2005           PG-13  Warner Bros.
+# The Dark Knight        2008           PG-13  Warner Bros.
+# The Dark Knight Rises  2012           PG-13  Warner Bros.
 
 
-# # Prints a header for the cast output
-# puts ""
-# puts "Top Cast"
-# puts "========"
-# puts ""
+# Prints a header for the cast output
+puts ""
+puts "Top Cast"
+puts "========"
+puts ""
 
-# # Query the cast data and loop through the results to display the cast output for each movie.
-# # TODO!
+# Query the cast data and loop through the results to display the cast output for each movie.
+# TODO!
 
-# # Top Cast
-# # ========
-
-# # Batman Begins          Christian Bale        Bruce Wayne
-# # Batman Begins          Michael Caine         Alfred
-# # Batman Begins          Liam Neeson           Ra's Al Ghul
-# # Batman Begins          Katie Holmes          Rachel Dawes
-# # Batman Begins          Gary Oldman           Commissioner Gordon
-# # The Dark Knight        Christian Bale        Bruce Wayne
-# # The Dark Knight        Heath Ledger          Joker
-# # The Dark Knight        Aaron Eckhart         Harvey Dent
-# # The Dark Knight        Michael Caine         Alfred
-# # The Dark Knight        Maggie Gyllenhaal     Rachel Dawes
-# # The Dark Knight Rises  Christian Bale        Bruce Wayne
-# # The Dark Knight Rises  Gary Oldman           Commissioner Gordon
-# # The Dark Knight Rises  Tom Hardy             Bane
-# # The Dark Knight Rises  Joseph Gordon-Levitt  John Blake
-# # The Dark Knight Rises  Anne Hathaway         Selina Kyle
+roles = Role.all
+for role in roles
+    movie = Movie.find_by({"id" => role["movie_id"]})
+    actor = Actor.find_by({"id" => role["actor_id"]})
+    puts "#{movie["title"]} #{actor["name"]}    #{role["character_name"]}"
+end 
